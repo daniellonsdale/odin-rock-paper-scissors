@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
 <script>
 
+console.log(getComputerChoice());
 
+function getComputerChoice(){
+    //Create choice variable
+    let choice;
+
+    //Create ranNum variable
+    let ranNum;
+
+    //Generate random number * 100, round down, and set to ranNum
+    ranNum = Math.floor(Math.random()*100);
+
+    //Set choice to rock if ranNum is 0-33
+    if (ranNum <= 33){
+        return "rock";
+    }
+
+    //Set choice to paper if ranNum is 34-66
+    else if (ranNum >= 34 && ranNum <= 66){
+        return "paper";
+    }
+
+    //Set choice to scissors if ranNum is 67-99
+    else{
+        return "scissors";
+    }
+}
 
 </script>
 </body>
