@@ -7,6 +7,7 @@
 </head>
 <body>
 <script>
+
 //Create humanScore and computerScore variables
 let humanScore = 0;
 let computerScore = 0;
@@ -55,6 +56,35 @@ function getHumanChoice(){
         return getHumanChoice();
     }
 }
+
+function playRound(humanChoice, computerChoice){
+    //If humanChoice and computerChoice are equal log "You tie!" and don't increment anything
+    if (humanChoice === computerChoice){
+        console.log(`It's a tie! You both played ${humanChoice}.`);
+    }
+    //If humanChoice is rock and computerChoice is scissors, log "You win" and increment playerScore
+    else if(humanChoice === "rock" && computerChoice === "scissors"){
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        humanScore++;
+    }
+    //If humanChoice is paper and computerChoice is rock, log "You win" and increment playerScore
+    else if(humanChoice === "paper" && computerChoice === "rock"){
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        humanScore++;
+    }
+    //If humanChoice is scissors and computerChoice is paper, log "You win" and increment playerScore
+    else if(humanChoice === "scissors" && computerChoice === "paper"){
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        humanScore++;
+    }
+    //Otherwise, log "You lose! computerChoice beats playerChoice!" and increment computerScore
+    else{
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+        computerScore++;
+    }
+}
+
+
 
 </script>
 </body>
