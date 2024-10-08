@@ -8,7 +8,7 @@
 <body>
 <script>
 
-console.log(getComputerChoice());
+console.log(getHumanChoice());
 
 function getComputerChoice(){
     //Create ranNum variable
@@ -35,8 +35,24 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     //Create userChoice
-    //Prompt user for their choice
-    //
+    let userChoice;
+
+    //Prompt user for their choice and set to userChoice
+    userChoice = prompt("Rock, Paper, or Scissors?");
+
+    //Change userChoice to all lower case
+    userChoice = userChoice.toLowerCase();
+
+    //If userChoice is equal to "rock" "paper" or "scissors" return it
+    if (userChoice === "rock" || userChoice === "paper" || userChoice == "scissors"){
+        return userChoice;
+    }
+    //If not, notify user and run getHumanChoice() again
+    else{
+        alert("That was not a valid input. Please try again.");
+        //Must return instead of just calling again, since otherwise no value will ever be returned
+        return getHumanChoice();
+    }
 }
 
 </script>
