@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container{
+    margin: 0 auto;
+    display: flex;
+    align-content: space-between;
+}
+
+.game-container div{
+    padding: 25px;
+}
