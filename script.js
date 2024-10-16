@@ -75,18 +75,6 @@ function playRound(humanChoice, computerChoice){
 }
 
 function playGame(){
-    //Play five rounds
-    for (let i = 0; i < 5; i++) {
-        //Get and store humanChoice
-        let humanChoice = getHumanChoice();
-
-        //Get and store computerChoice
-        let computerChoice = getComputerChoice();
-
-        //playRound with those choices as the arguments
-        playRound(humanChoice, computerChoice);
-    }
-
     //After 5 rounds, stop playing and declare a winner by comparing scores
     if(humanScore === computerScore){
         console.log("You tied the whole game! Not too bad!");
