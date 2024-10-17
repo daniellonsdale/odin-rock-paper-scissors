@@ -41,12 +41,6 @@ function getComputerChoice(){
     }
 }
 
-function getHumanChoice(){
-    
-
-
-}
-
 function playRound(humanChoice, computerChoice){
     //If humanChoice and computerChoice are equal log "You tie!" and don't increment anything
     if (humanChoice === computerChoice){
@@ -89,4 +83,4 @@ function playGame(humanChoice){
     }
 }
 
-playGame();
+playGame(humanChoice);
