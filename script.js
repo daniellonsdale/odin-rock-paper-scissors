@@ -6,6 +6,12 @@ let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
 
+const playerScoreText = document.querySelector(".player-score span");
+const computerScoreText = document.querySelector(".computer-score span");
+const roundResult = document.querySelector(".round-result span");
+const finalResult = document.querySelector(".final-result span");
+const scoreContainer = document.querySelector(".score-container");
+
 rock.addEventListener("click", () => {
     playGame("rock");
 });
@@ -42,43 +48,57 @@ function getComputerChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
+
+
     //If humanChoice and computerChoice are equal log "You tie!" and don't increment anything
     if (humanChoice === computerChoice){
-        console.log(`It's a tie! You both played ${humanChoice}.`);
+        roundResult.textContent = `It's a tie! You both played ${humanChoice}.`;
     }
     //If humanChoice is rock and computerChoice is scissors, log "You win" and increment playerScore
     else if(humanChoice === "rock" && computerChoice === "scissors"){
-        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
         humanScore++;
     }
     //If humanChoice is paper and computerChoice is rock, log "You win" and increment playerScore
     else if(humanChoice === "paper" && computerChoice === "rock"){
-        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
         humanScore++;
     }
     //If humanChoice is scissors and computerChoice is paper, log "You win" and increment playerScore
     else if(humanChoice === "scissors" && computerChoice === "paper"){
-        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        roundResult.textContent =`You win! ${humanChoice} beats ${computerChoice}!`;
         humanScore++;
     }
     //Otherwise, log "You lose! computerChoice beats playerChoice!" and increment computerScore
     else{
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+        roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
         computerScore++;
     }
 }
 
+//FIND WAY TO END GAME AFTER SOMEONE WINS
 function playGame(humanChoice){
     playRound(humanChoice, getComputerChoice());
+    playerScoreText.textContent = `The current player score is: ${humanScore}`;
+    computerScoreText.textContent = `The current computer score is: ${computerScore}`;
 
+    if(humanScore + computerScore >= 5){
+        if(humanScore === computerScore){
+            finalResult.textContent = "You tied the whole game! Not too bad! Reload the page to play again";
+        }
+        else if(humanScore > computerScore){
+            finalResult.textContent = "You won the whole game! Congratulations! Reload the page to play again";
+        }
+        else{
+            finalResult.textContent = "You lost this time! Better luck next time! Reload the page to play again";
+        }
+    }
+    
+}
 
-    if(humanScore === computerScore){
-        console.log("You tied the whole game! Not too bad!");
-    }
-    else if(humanScore > computerScore){
-        console.log("You won the whole game! Congratulations!");
-    }
-    else{
-        console.log("You lost this time! Better luck next time!");
-    }
+function resetGame(){
+    humanScore = 0;
+    computerScore = 0;
+    finalResult.textContent = '';
+    roundResult.textContent = '';
 }
