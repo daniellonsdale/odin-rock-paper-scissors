@@ -69,7 +69,7 @@ function playRound(humanChoice, computerChoice){
 }
 
 function playGame(humanChoice){
-    
+    playRound(humanChoice, getComputerChoice());
 
 
     if(humanScore === computerScore){

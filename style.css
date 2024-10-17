@@ -6,6 +6,8 @@
 
 body{
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     height:100vh;
@@ -33,4 +35,9 @@ body{
 .game-container span{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 800;
+}
+
+.score-container{
+    display: flex;
+    flex-direction: column;
 }
