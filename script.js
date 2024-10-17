@@ -82,5 +82,3 @@ function playGame(humanChoice){
         console.log("You lost this time! Better luck next time!");
     }
 }
-
-playGame(humanChoice);
