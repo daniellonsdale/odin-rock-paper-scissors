@@ -2,6 +2,22 @@
 let humanScore = 0;
 let computerScore = 0;
 
+let rock = document.querySelector(".rock");
+let paper = document.querySelector(".paper");
+let scissors = document.querySelector(".scissors");
+
+rock.addEventListener("click", () => {
+    playGame("rock");
+});
+
+paper.addEventListener("click", () => {
+    playGame("paper");
+});
+
+scissors.addEventListener("click", () => {
+    playGame("scissors");
+});
+
 function getComputerChoice(){
     //Create ranNum variable
     let ranNum;
@@ -26,25 +42,9 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    //Create userChoice
-    let userChoice;
+    
 
-    //Prompt user for their choice and set to userChoice
-    userChoice = prompt("Rock, Paper, or Scissors?");
 
-    //Change userChoice to all lower case
-    userChoice = userChoice.toLowerCase();
-
-    //If userChoice is equal to "rock" "paper" or "scissors" return it
-    if (userChoice === "rock" || userChoice === "paper" || userChoice == "scissors"){
-        return userChoice;
-    }
-    //If not, notify user and run getHumanChoice() again
-    else{
-        alert("That was not a valid input. Please try again.");
-        //Must return instead of just calling again, since otherwise no value will ever be returned
-        return getHumanChoice();
-    }
 }
 
 function playRound(humanChoice, computerChoice){
@@ -74,8 +74,10 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-function playGame(){
-    //After 5 rounds, stop playing and declare a winner by comparing scores
+function playGame(humanChoice){
+    
+
+
     if(humanScore === computerScore){
         console.log("You tied the whole game! Not too bad!");
     }
