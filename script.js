@@ -85,20 +85,22 @@ function playGame(humanChoice){
     if(humanScore + computerScore >= 5){
         if(humanScore === computerScore){
             finalResult.textContent = "You tied the whole game! Not too bad! Reload the page to play again";
+            endGame();
         }
         else if(humanScore > computerScore){
             finalResult.textContent = "You won the whole game! Congratulations! Reload the page to play again";
+            endGame();
         }
         else{
             finalResult.textContent = "You lost this time! Better luck next time! Reload the page to play again";
+            endGame();
         }
     }
     
 }
 
-function resetGame(){
-    humanScore = 0;
-    computerScore = 0;
-    finalResult.textContent = '';
-    roundResult.textContent = '';
+function endGame(){
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
 }
