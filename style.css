@@ -20,7 +20,7 @@ body{
     gap: 10px;
 }
 
-.game-container div{
+.game-container button{
     padding: 25px;
     background-color: rgb(150, 197, 239);
     border: solid 2px red;
